@@ -30,6 +30,14 @@ function App() {
           user: user
         })
       })
+      spotify.getUserPlaylists().then( (playlists) => {
+        console.log("playlists:")
+        console.log(playlists)
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: playlists
+        })
+      })
     }
     
   }, [])
